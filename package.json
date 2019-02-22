@@ -1,0 +1,14 @@
+{
+  "name": "appium-monorepo",
+  "version": "1.0.0",
+  "description": "Repo for managing Appium packages",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Dan Graham",
+  "license": "ISC",
+  "devDependencies": {
+    "lerna": "^3.13.0"
+  }
+}
