@@ -24,6 +24,6 @@ jobs:
     - script: bash ci/start-emulator.sh
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Start the emulator
-    - script: ${{ script }}
+    - script: ${{ parameters.script }}
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Espresso Driver E2E Tests
