@@ -10,6 +10,12 @@ jobs:
     dependsOn: ${{ parameters.dependsOn }}
     pool:
       vmImage: 'macOS-10.13'
+    trigger:
+      paths:
+        exclude:
+          - docs/*
+        include:
+          - ${{ parameters.workingDirectory}}
     variables:
       TERM: dumb
     steps:
@@ -29,10 +35,3 @@ jobs:
     - script: ${{ parameters.script }}
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Run tests
-
-trigger:
-  paths:
-    exclude:
-      - docs/*
-    include:
-      - ${{ parameters.workingDirectory}}
