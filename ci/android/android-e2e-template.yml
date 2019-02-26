@@ -22,9 +22,9 @@ jobs:
     - script: npm run build
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Build
-    - script: bash ../start-emulator.sh
+    - script: bash ci/start-emulator.sh
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Start the emulator
     - script: ${{ parameters.script }}
       workingDirectory: ${{ parameters.workingDirectory }}
-      displayName: Espresso Driver E2E Tests
+      displayName: Run tests
