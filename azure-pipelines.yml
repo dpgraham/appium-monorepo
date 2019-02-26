@@ -7,8 +7,11 @@ steps:
 - task: NodeTool@0
   inputs:
     versionSpec: 11.x
+- script: npm install
+  workingDirectory: packages/appium-espresso-driver
 - script: npm run build
   workingDirectory: packages/appium-espresso-driver
   displayName: Build
-- script: npx mocha --timeout 6000000 --recursive packages/appium-espresso-driver/build/test/functional/
+- script: npx mocha --timeout 6000000 --recursive build/test/functional/
+  workingDirectory: packages/appium-espresso-driver
   displayName: Espresso Driver E2E Tests
