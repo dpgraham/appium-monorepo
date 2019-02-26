@@ -2,11 +2,9 @@
 jobs:
   - template: ci/node/node-monorepo-template.yml
   - template: ci/android/android-e2e-template.yml
+    # TODO: Trigger to only build on packages/appium-espresso-driver
     parameters:
       name: EspressoDriverE2E
       script: npx mocha --timeout 6000000 --recursive build/test/functional/
       workingDirectory: packages/appium-espresso-driver
       dependsOn: UnitTests
-  - job: AnotherJob
-
-

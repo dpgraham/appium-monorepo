@@ -9,4 +9,6 @@ jobs:
       - script: npm install
         displayName: Install dependencies
       - script: npx lerna bootstrap --no-ci
+        displayName: Lerna Bootstrap
       - script: npx lerna run test
+        displayName: Run npm test on all packages
