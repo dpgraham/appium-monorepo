@@ -1,7 +1,24 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
 jobs:
-- template: ci/android/android-e2e-template.yml
-  parameters:
-    name: Espresso Driver E2E tests
-    script: npx mocha --timeout 6000000 --recursive build/test/functional/
-    workingDirectory: packages/appium-espresso-driver
+  - job: EspressoTests
+    pool:
+      vmImage: 'macOS-10.13'
+    variables:
+      TERM: dumb
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: 11.x
+    - script: npm install
+      workingDirectory: packages/appium-espresso-driver
+      displayName: Install Node dependencies
+    - script: npm run build
+      workingDirectory: packages/appium-espresso-driver
+      displayName: Build
+    - script: bash ci/start-emulator.sh
+      workingDirectory: packages/appium-espresso-driver
+      displayName: Start the emulator
+    - script: npx mocha --timeout 6000000 --recursive build/test/functional/
+      workingDirectory: packages/appium-espresso-driver
+      displayName: Espresso Driver E2E Tests
+
