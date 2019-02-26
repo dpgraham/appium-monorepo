@@ -1,7 +1,7 @@
-# https://docs.microsoft.com/azure/devops/pipelines/languages/android
 jobs:
   # Run installation scripts and 'npm test' on all packages
   - template: ci/node/node-monorepo-template.yml
+  
   # Run E2E Tests
   - template: ci/android/android-e2e-template.yml
     # TODO: Trigger to only build on packages/appium-espresso-driver
@@ -11,10 +11,5 @@ jobs:
       workingDirectory: packages/appium-espresso-driver
       #dependsOn: Build
   - job: Something
-
-trigger:
-  paths:
-    exclude:
-      - docs/*
-    include:
-      - ${{ parameters.workingDirectory}}
+    pool:
+      vmImage: 'macOS-10.13'

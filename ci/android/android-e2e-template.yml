@@ -9,28 +9,23 @@ jobs:
     dependsOn: ${{ parameters.dependsOn }}
     pool:
       vmImage: 'macOS-10.13'
-    trigger:
-      paths:
-        exclude:
-          - docs/*
-        include:
-          - ${{ parameters.workingDirectory}}
     variables:
       TERM: dumb
+    
     steps:
-    - task: NodeTool@0
-      inputs:
-        versionSpec: 11.x
-    - script: npm install
-      workingDirectory: ${{ parameters.workingDirectory }}
-      displayName: Install Node dependencies
-    - script: npm run build
-      workingDirectory: ${{ parameters.workingDirectory }}
-      displayName: Build
-    - task: Bash@3
-      inputs:
-        filePath: ci/start-emulator.sh
-      displayName: Start the emulator
-    - script: ${{ parameters.script }}
-      workingDirectory: ${{ parameters.workingDirectory }}
-      displayName: Run tests
+      - task: NodeTool@0
+        inputs:
+          versionSpec: 11.x
+      - script: npm install
+        workingDirectory: ${{ parameters.workingDirectory }}
+        displayName: Install Node dependencies
+      - script: npm run build
+        workingDirectory: ${{ parameters.workingDirectory }}
+        displayName: Build
+      - task: Bash@3
+        inputs:
+          filePath: ci/start-emulator.sh
+        displayName: Start the emulator
+      - script: ${{ parameters.script }}
+        workingDirectory: ${{ parameters.workingDirectory }}
+        displayName: Run tests
