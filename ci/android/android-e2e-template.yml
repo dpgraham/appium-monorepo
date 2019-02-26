@@ -20,7 +20,7 @@ jobs:
     - script: npm run build
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Build
-    - script: bash ../ci/start-emulator.sh
+    - script: bash ../start-emulator.sh
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Start the emulator
     - script: ${{ parameters.script }}
