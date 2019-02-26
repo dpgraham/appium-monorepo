@@ -5,13 +5,6 @@ parameters:
     name: ''
     dependsOn: ''
 
-trigger:
-  paths:
-    exclude:
-      - docs/*
-    include:
-      - ${{ parameters.workingDirectory }}
-
 jobs:
   - job: ${{ parameters.name }}
     dependsOn: ${{ parameters.dependsOn }}
@@ -36,3 +29,10 @@ jobs:
     - script: ${{ parameters.script }}
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Run tests
+
+trigger:
+  paths:
+    exclude:
+      - docs/*
+    include:
+      - ${{ parameters.workingDirectory}}
