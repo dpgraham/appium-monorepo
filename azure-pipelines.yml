@@ -1,5 +1,6 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
 jobs:
+  - template: ci/node/node-monorepo-template.yml
   - template: ci/android/android-e2e-template.yml
     parameters:
       name: EspressoDriverE2E
