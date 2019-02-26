@@ -22,8 +22,9 @@ jobs:
     - script: npm run build
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Build
-    - script: bash ci/start-emulator.sh
-      workingDirectory: ${{ parameters.workingDirectory }}
+    - task: Bash@3
+      inputs:
+        filePath: ci/start-emulator.sh
       displayName: Start the emulator
     - script: ${{ parameters.script }}
       workingDirectory: ${{ parameters.workingDirectory }}
