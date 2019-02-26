@@ -9,6 +9,4 @@ jobs:
 trigger:
   paths:
     include:
-    - lib/*
-    - test/*
-    - package.json
+    - packages/appium-espresso-driver/*
