@@ -11,6 +11,7 @@ import { version } from '../../package.json'; // eslint-disable-line import/no-u
 import { findAPortNotInUse } from 'portscanner';
 import { retryInterval } from 'asyncbox';
 
+const tempString = 'hello';
 
 // TODO merge our own helpers onto this later
 const helpers = androidHelpers;
