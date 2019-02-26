@@ -3,16 +3,16 @@ pool:
   vmImage: 'macOS-10.13'
 variables:
   TERM: dumb
-workingDirectory: ${{ workingDirectory }}
 steps:
-- script: bash ci/start-emulator.sh
-  displayName: Create and Build Emulator
+workingDirectory: ${{ workingDirectory }}
 - task: NodeTool@0
   inputs:
     versionSpec: 11.x
 - script: npm install
   displayName: Install Node dependencies
 - script: npm run build
-  displayName: Run build script
-- script: {{ testScript }}
-  displayName: Tests for ${{ workingDirectory }}
+  displayName: Build
+- script: bash ci/start-emulator.sh
+  displayName: Start the emulator
+- script: ${{ testScript }}
+  displayName: Espresso Driver E2E Tests
