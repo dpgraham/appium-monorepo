@@ -1,0 +1,100 @@
+{
+  "name": "appium-espresso-driver",
+  "description": "Espresso integration for Appium",
+  "keywords": [
+    "appium",
+    "espresso",
+    "automated testing",
+    "android"
+  ],
+  "version": "1.8.0",
+  "author": "appium",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/appium/appium-espresso-driver.git"
+  },
+  "bugs": {
+    "url": "https://github.com/appium/appium-espresso-driver/issues"
+  },
+  "engines": [
+    "node"
+  ],
+  "main": "./build/index.js",
+  "bin": {},
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "build/index.js",
+    "build/lib",
+    "espresso-server/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+    "espresso-server/AndroidManifest-test.xml"
+  ],
+  "dependencies": {
+    "@babel/runtime": "^7.0.0",
+    "appium-adb": "^7.0.0",
+    "appium-android-driver": "^4.0.0",
+    "appium-base-driver": "^3.5.0",
+    "appium-support": "^2.20.0",
+    "asyncbox": "^2.3.1",
+    "bluebird": "^3.5.0",
+    "lodash": "^4.17.11",
+    "portscanner": "^2.1.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.1",
+    "source-map-support": "^0.5.8",
+    "validate.js": "^0.12.0",
+    "yargs": "^13.1.0"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules && rm -f package-lock.json && npm install",
+    "build:server": "cd espresso-server && ./gradlew clean assembleAndroidTest && cd ..",
+    "build:node": "gulp transpile",
+    "build": "npm run build:node && npm run build:server",
+    "mocha": "mocha",
+    "test": "npm run test:server && npm run test:node",
+    "test:node": "gulp once",
+    "test:server": "cd espresso-server && ./gradlew test && cd ..",
+    "e2e-test": "gulp transpile && mocha --timeout 600000 --recursive build/test/functional/",
+    "watch": "gulp watch",
+    "coverage": "gulp coveralls",
+    "prepare": "gulp prepublish && npm run build:server",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
+    "precommit-test": "REPORTER=dot gulp once && npm run test:server",
+    "lint": "gulp eslint",
+    "lint:fix": "gulp eslint --fix"
+  },
+  "pre-commit": [
+    "precommit-msg",
+    "precommit-test"
+  ],
+  "devDependencies": {
+    "ajv": "^6.5.3",
+    "android-apidemos": "^3.0.0",
+    "appium-chromedriver": "^4.7.0",
+    "appium-gulp-plugins": "^3.1.0",
+    "appium-test-support": "^1.0.0",
+    "babel-eslint": "^10.0.0",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^5.2.0",
+    "eslint-config-appium": "^4.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-mocha": "^5.0.0",
+    "eslint-plugin-promise": "^4.0.0",
+    "gps-demo-app": "^2.1.1",
+    "gulp": "^4.0.0",
+    "mocha": "^6.0.0",
+    "pre-commit": "^1.2.2",
+    "sinon": "^7.2.3",
+    "wd": "^1.10.3",
+    "xmldom": "^0.1.27",
+    "xpath": "0.0.27"
+  },
+  "greenkeeper": {
+    "ignore": []
+  }
+}
