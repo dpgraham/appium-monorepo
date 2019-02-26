@@ -1,4 +1,4 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
 jobs:
   # Run installation scripts and 'npm test' on all packages
-  - template: ci/node/node-monorepo-template.yml 
+  - template: ci/node/node-monorepo-template.yml
