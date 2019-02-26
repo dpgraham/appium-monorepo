@@ -4,4 +4,4 @@ jobs:
     parameters:
       name: EspressoDriverE2E
       script: npx mocha --timeout 6000000 --recursive --reporter dot build/test/functional/
-      workingDirectory: packages/appium-espresso-driver 
+      workingDirectory: packages/appium-espresso-driver
