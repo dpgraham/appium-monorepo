@@ -1,5 +1,5 @@
 jobs:
-  - job: UnitTests
+  - job: Build
     pool:
       vmImage: 'macOS-10.13'
     steps:
