@@ -2,6 +2,6 @@
 jobs:
   - template: ci/android/android-e2e-template.yml
     parameters:
+      name: Espresso Driver E2E tests
+      script: npx mocha --timeout 6000000 --recursive build/test/functional/
       workingDirectory: packages/appium-espresso-driver
-      testScript: npx mocha --timeout 6000000 --recursive packages/appium-espresso-driver/build/test/functional/ && npm run test:server
-  
