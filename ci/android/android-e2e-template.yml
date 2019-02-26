@@ -4,7 +4,6 @@ parameters:
     workingDirectory: ''
     name: ''
     dependsOn: ''
-
 jobs:
   - job: ${{ parameters.name }}
     dependsOn: ${{ parameters.dependsOn }}

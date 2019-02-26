@@ -11,3 +11,10 @@ jobs:
       workingDirectory: packages/appium-espresso-driver
       #dependsOn: Build
   - job: Something
+
+trigger:
+  paths:
+    exclude:
+      - docs/*
+    include:
+      - ${{ parameters.workingDirectory}}
