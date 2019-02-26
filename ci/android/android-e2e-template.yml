@@ -5,6 +5,13 @@ parameters:
     name: ''
     dependsOn: ''
 
+trigger:
+  paths:
+    exclude:
+      - docs/*
+    include:
+      - ${{ parameters.workingDirectory }}
+
 jobs:
   - job: ${{ parameters.name }}
     dependsOn: ${{ parameters.dependsOn }}
