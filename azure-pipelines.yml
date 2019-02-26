@@ -1,7 +1,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
 jobs:
-  - template: ci/android/android-e2e-template.yml
-    parameters:
-      name: Espresso Driver E2E tests
-      script: npx mocha --timeout 6000000 --recursive build/test/functional/
-      workingDirectory: packages/appium-espresso-driver
+- template: ci/android/android-e2e-template.yml
+  parameters:
+    name: Espresso Driver E2E tests
+    script: npx mocha --timeout 6000000 --recursive build/test/functional/
+    workingDirectory: packages/appium-espresso-driver
