@@ -10,7 +10,9 @@ steps:
 - task: NodeTool@0
   inputs:
     versionSpec: 11.x
+- script: npm install
+  displayName: Install Node dependencies
 - script: npm run build
-  displayName: Build
+  displayName: Run build script
 - script: {{ testScript }}
-  displayName: E2E Tests for ${{ workingDirectory }}
+  displayName: Tests for ${{ workingDirectory }}

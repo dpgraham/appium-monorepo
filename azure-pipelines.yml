@@ -12,6 +12,8 @@ steps:
 - script: npm run build
   workingDirectory: packages/appium-espresso-driver
   displayName: Build
+- script: bash ci/start-emulator.sh
+  displayName: Start the emulator
 - script: npx mocha --timeout 6000000 --recursive build/test/functional/
   workingDirectory: packages/appium-espresso-driver
   displayName: Espresso Driver E2E Tests
