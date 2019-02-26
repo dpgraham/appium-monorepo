@@ -10,12 +10,14 @@ steps:
     #gradleWrapperFile: '\gradlew'
     #gradleOptions: '-Xmx3072m'
     #publishJUnitResults: false
-- script: bash ci/start-emulator.sh
-  displayName: Create and Build Emulator
+#- script: bash ci/start-emulator.sh
+  #displayName: Create and Build Emulator
 - task: NodeTool@0
   inputs:
     versionSpec: 11.x
-- script: npx lerna bootstrap
+- script: |
+    npm --version
+    npx lerna bootstrap
   displayName: Lerna bootstrap
 #- script: npm test
   #displayName: Run tests
