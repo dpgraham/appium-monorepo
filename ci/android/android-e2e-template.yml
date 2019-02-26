@@ -3,25 +3,25 @@ parameters:
     name: 'E2E Tests'
     script: 'npx mocha --timeout 6000000 --recursive build/test/functional/'
     workingDirectory: ''
-job: ${{ parameters.name }}
-pool:
-  vmImage: 'macOS-10.13'
-variables:
-  TERM: dumb
-displayName: ${{ parameters.name }}
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: 11.x
-- script: npm install
-  workingDirectory: ${{ parameters.workingDirectory }}
-  displayName: Install Node dependencies
-- script: npm run build
-  workingDirectory: ${{ parameters.workingDirectory }}
-  displayName: Build
-- script: bash ci/start-emulator.sh
-  workingDirectory: ${{ parameters.workingDirectory }}
-  displayName: Start the emulator
-- script: ${{ parameters.script }}
-  workingDirectory: ${{ parameters.workingDirectory }}
-  displayName: Espresso Driver E2E Tests
+- job: ${{ parameters.name }}
+  pool:
+    vmImage: 'macOS-10.13'
+  variables:
+    TERM: dumb
+  displayName: ${{ parameters.name }}
+  steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: 11.x
+  - script: npm install
+    workingDirectory: ${{ parameters.workingDirectory }}
+    displayName: Install Node dependencies
+  - script: npm run build
+    workingDirectory: ${{ parameters.workingDirectory }}
+    displayName: Build
+  - script: bash ci/start-emulator.sh
+    workingDirectory: ${{ parameters.workingDirectory }}
+    displayName: Start the emulator
+  - script: ${{ parameters.script }}
+    workingDirectory: ${{ parameters.workingDirectory }}
+    displayName: Espresso Driver E2E Tests
