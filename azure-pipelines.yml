@@ -5,6 +5,6 @@ jobs:
     # TODO: Trigger to only build on packages/appium-espresso-driver
     parameters:
       name: EspressoDriverE2E
-      script: npx mocha --timeout 6000000 --recursive build/test/functional/
+      script: npx mocha --timeout 6000000 --recursive --reporters dot build/test/functional/
       workingDirectory: packages/appium-espresso-driver
       dependsOn: UnitTests
