@@ -7,7 +7,6 @@ parameters:
       paths:
         include: 
         - ${{ parameters.workingDirectory }}
-        - 
 
 jobs:
   - job: ${{ parameters.name }}

@@ -1,16 +1,5 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
 jobs:
-  #- job: UnitTests
-    #steps:
-      #- task: NodeTool@0
-        #inputs:
-          #versionSpec: 11.x
-      #- script: npm install
-        #displayName: Install Everything
-      #- script: npx lerna bootstrap
-      #- script: npx 
-
-  # E2E Tests
   - template: ci/android/android-e2e-template.yml
     parameters:
       name: EspressoDriverE2E
