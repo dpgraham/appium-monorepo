@@ -7,7 +7,7 @@ async function startServer (port, host) {
   let d = new EspressoDriver({port, host});
   let router = routeConfiguringFunction(d);
   let server = baseServer(router, port, host);
-  log.info(`Android Espresso Driver listening TODO DELETE ME221 on http://${host}:${port}`);
+  log.info(`Android Espresso Driver listening on http://${host}:${port}`);
   return await server;
 }
 
