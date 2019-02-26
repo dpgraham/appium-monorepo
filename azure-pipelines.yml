@@ -1,15 +1,3 @@
 jobs:
   # Run installation scripts and 'npm test' on all packages
   - template: ci/node/node-monorepo-template.yml
-  
-  # Run E2E Tests
-  - template: ci/android/android-e2e-template.yml
-    # TODO: Trigger to only build on packages/appium-espresso-driver
-    parameters:
-      name: EspressoDriverE2E
-      script: npx mocha --timeout 6000000 --recursive --reporter dot build/test/functional/ # TODO: Change this to mocha script directory only
-      workingDirectory: packages/appium-espresso-driver
-      #dependsOn: Build
-  - job: Something
-    pool:
-      vmImage: 'macOS-10.13'
