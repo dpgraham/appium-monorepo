@@ -3,9 +3,11 @@ parameters:
     script: 'npx mocha --timeout 6000000 --recursive build/test/functional/'
     workingDirectory: ''
     name: ''
+    dependsOn: ''
 
 jobs:
   - job: ${{ parameters.name }}
+    dependsOn: ${{ parameters.dependsOn }}
     pool:
       vmImage: 'macOS-10.13'
     variables:

@@ -8,5 +8,5 @@ jobs:
           versionSpec: 11.x
       - script: npm install
         displayName: Install dependencies
-      #- script: npx lerna bootstrap
-      #- script: npx 
+      - script: npx lerna bootstrap --no-ci
+      - script: npx lerna run test
