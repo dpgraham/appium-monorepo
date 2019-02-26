@@ -3,6 +3,12 @@ parameters:
     script: 'npx mocha --timeout 6000000 --recursive build/test/functional/'
     workingDirectory: ''
     name: ''
+    trigger:
+      paths:
+        include: 
+        - ${{ parameters.workingDirectory }}
+        - 
+
 jobs:
   - job: ${{ parameters.name }}
     pool:
@@ -19,7 +25,7 @@ jobs:
     - script: npm run build
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Build
-    - script: bash ci/start-emulator.sh
+    - script: bash ../ci/start-emulator.sh
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Start the emulator
     - script: ${{ parameters.script }}
