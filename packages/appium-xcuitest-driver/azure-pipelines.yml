@@ -1,12 +1,13 @@
 jobs:
   - job: E2E_Basic_12_2
+    pool:
+      vmImage: 'macOS 10.13'
     steps:
     - task: Xcode@5
       inputs:
         scheme: ''
         sdk: 'iphoneos'
         configuration: 'Release'
-        xcodeVersion: 'default'
     - task: NodeTool@0
       inputs:
         versionSpec: 11.x
