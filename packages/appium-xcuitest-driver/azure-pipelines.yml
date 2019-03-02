@@ -1,5 +1,4 @@
 jobs:
-  # Run E2E Tests
   - job: E2E_Basic_12_2
     steps:
     - task: Xcode@5
