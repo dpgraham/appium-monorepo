@@ -2,27 +2,27 @@ jobs:
   # Run E2E Tests
   - template: ../../ci/android/android-e2e-template.yml
     parameters:
-      name: Uiautomator2DriverE2ETest
+      name: Uiautomator2DriverE2ETest1
       script: npx mocha --timeout 6000000 --reporter dot build/test/functional/
       workingDirectory: packages/appium-uiautomator2-driver
   - template: ../../ci/android/android-e2e-template.yml
     parameters:
-      name: Uiautomator2DriverE2ETest
+      name: Uiautomator2DriverE2ETest2
       script: npx mocha --timeout 6000000 --reporter dot build/test/functional/commands
       workingDirectory: packages/appium-uiautomator2-driver
   - template: ../../ci/android/android-e2e-template.yml
     parameters:
-      name: Uiautomator2DriverE2ETest
+      name: Uiautomator2DriverE2ETest3
       script: npx mocha --timeout 6000000 --reporter dot build/test/functional/commands/keyboard
       workingDirectory: packages/appium-uiautomator2-driver
   - template: ../../ci/android/android-e2e-template.yml
     parameters:
-      name: Uiautomator2DriverE2ETest
+      name: Uiautomator2DriverE2ETest4
       script: npx mocha --timeout 6000000 --reporter dot build/test/functional/commands/find
       workingDirectory: packages/appium-uiautomator2-driver
   - template: ../../ci/android/android-e2e-template.yml
     parameters:
-      name: Uiautomator2DriverE2ETest
+      name: Uiautomator2DriverE2ETest5
       script: npx mocha --timeout 6000000 --reporter dot build/test/functional/commands/general
       workingDirectory: packages/appium-uiautomator2-driver
     
