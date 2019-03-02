@@ -3,11 +3,6 @@ jobs:
     pool:
       vmImage: 'macOS 10.13'
     steps:
-    - task: Xcode@5
-      inputs:
-        scheme: ''
-        sdk: 'iphoneos'
-        configuration: 'Release'
     - task: NodeTool@0
       inputs:
         versionSpec: 11.x
