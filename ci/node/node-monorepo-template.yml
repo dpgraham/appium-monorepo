@@ -2,7 +2,7 @@ parameters:
   node_version: 11.x
   name: Node11Tests
 jobs:
-  - job: Build
+  - job: ${{ parameters.name }}
     pool:
       vmImage: 'ubuntu-16.04'
     steps:
