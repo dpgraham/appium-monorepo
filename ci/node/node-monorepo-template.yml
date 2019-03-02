@@ -1,3 +1,5 @@
+parameters:
+  node_version: 11.x
 jobs:
   - job: Build
     pool:
@@ -5,7 +7,7 @@ jobs:
     steps:
       - task: NodeTool@0
         inputs:
-          versionSpec: 11.x
+          versionSpec: ${{ parameters.node_version }}
       - script: npm install
         displayName: Install dependencies
       - script: npx lerna bootstrap --no-ci

@@ -2,3 +2,9 @@
 jobs:
   # Run installation scripts and 'npm test' on all packages
   - template: ci/node/node-monorepo-template.yml 
+  - template: ci/node/node-monorepo-template.yml
+    parameters:
+      node_version: 10.x
+  - template: ci/node/node-monorepo-template.yml
+    parameters:
+      node_version: 8.x 
