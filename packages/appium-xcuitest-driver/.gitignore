@@ -1,0 +1,9 @@
+node_modules
+build
+coverage
+*.log
+*.xcconfig
+.DS_Store
+ci-metrics
+package-lock.json*
+.nyc_output/
