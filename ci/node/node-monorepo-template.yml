@@ -15,4 +15,3 @@ jobs:
         displayName: Lerna Bootstrap
       - script: npx lerna run test
         displayName: Run npm test on all packages
-    name: ${{ parameters.name }}
