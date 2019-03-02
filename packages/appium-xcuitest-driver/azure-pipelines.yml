@@ -1,0 +1,12 @@
+jobs:
+  # Run E2E Tests
+  - job: E2E_Basic_12_2
+    steps:
+    - task: Xcode@5
+      inputs:
+        xcodeVersion: 10
+    - task: NodeTool@0
+      inputs:
+        versionSpec: 11.x
+    - script: npm run mocha -- -t 480000 build/test/functional -g @skip-ci -i --exit
+    
