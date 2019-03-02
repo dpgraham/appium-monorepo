@@ -2,10 +2,10 @@
 
 # Install AVD files
 # TODO: Do not hardcode Android SDK versions
-echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --install 'system-images;android-$ANDROID_SDK;google_apis;x86'
+echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --install 'system-images;android-${ANDROID_SDK};google_apis;x86'
 
 # Create emulator
-echo "no" | $ANDROID_HOME/tools/bin/avdmanager create avd -n testemulator -k 'system-images;android-$ANDROID_SDK;google_apis;x86' --force
+echo "no" | $ANDROID_HOME/tools/bin/avdmanager create avd -n testemulator -k 'system-images;android-${ANDROID_SDK};google_apis;x86' --force
 
 echo $ANDROID_HOME/emulator/emulator -list-avds
 
