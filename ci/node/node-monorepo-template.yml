@@ -1,11 +1,12 @@
 jobs:
   - job: Build
     pool:
-      vmImage: 'macOS-10.13'
+      vmImage: 'ubuntu-16.04'
     steps:
       - task: NodeTool@0
         inputs:
           versionSpec: 11.x
+      - task: C
       - script: npm install
         displayName: Install dependencies
       - script: npx lerna bootstrap --no-ci
