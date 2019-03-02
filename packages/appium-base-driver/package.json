@@ -60,7 +60,7 @@
   "scripts": {
     "clean": "rm -rf node_modules && rm -f package-lock.json && npm install",
     "prepare": "gulp prepublish",
-    "test": "gulp e2e-test && gulp once",
+    "test": "gulp once",
     "watch": "gulp watch",
     "lint": "gulp eslint",
     "lint:fix": "gulp eslint --fix",
