@@ -4,9 +4,12 @@ jobs:
     steps:
     - task: Xcode@5
       inputs:
-        xcodeVersion: 10
+        scheme: ''
+        sdk: 'iphoneos'
+        configuration: 'Release'
+        xcodeVersion: 'default'
     - task: NodeTool@0
       inputs:
         versionSpec: 11.x
+    - script: npm install
     - script: npm run mocha -- -t 480000 build/test/functional -g @skip-ci -i --exit
-    
