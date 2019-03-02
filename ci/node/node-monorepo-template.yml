@@ -1,5 +1,6 @@
 parameters:
   node_version: 11.x
+  name: Node11Tests
 jobs:
   - job: Build
     pool:
@@ -14,3 +15,4 @@ jobs:
         displayName: Lerna Bootstrap
       - script: npx lerna run test
         displayName: Run npm test on all packages
+    name: ${{ parameters.name }}

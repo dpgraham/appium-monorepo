@@ -5,6 +5,8 @@ jobs:
   - template: ci/node/node-monorepo-template.yml
     parameters:
       node_version: 10.x
+      name: Node10Test
   - template: ci/node/node-monorepo-template.yml
     parameters:
       node_version: 8.x 
+      name: Node8Test
