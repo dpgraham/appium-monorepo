@@ -55,7 +55,7 @@
     "build:node": "gulp transpile",
     "build": "npm run build:node && npm run build:server",
     "mocha": "mocha",
-    "test": "gulp once",
+    "test": "npm run test:server && gulp once",
     "test:server": "cd espresso-server && ./gradlew test && cd ..",
     "e2e-test": "gulp transpile && mocha --timeout 600000 --recursive build/test/functional/",
     "watch": "gulp watch",
