@@ -9,6 +9,11 @@ jobs:
     - task: NodeTool@0
       inputs:
         versionSpec: 11.x
+    - script: |
+        sed -i '' 's/git@github.com:/https:\/\/github.com\//' /Users/travis/build/appium/appium-xcuitest-driver/.gitmodules;
+        git submodule update --init --recursive;
+      workingDirectory: packages/appium-xcuitest-driver
+      displayName: Checkout WDA submodule
     - script: npm install
       workingDirectory: packages/appium-xcuitest-driver
       displayName: Install node dependencies
