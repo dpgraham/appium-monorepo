@@ -7,4 +7,8 @@ jobs:
       inputs:
         versionSpec: 11.x
     - script: npm install
+      displayName: Install node dependencies
+    - script: npm run build
+      displayName: Build
     - script: npx mocha --timeout 480000 build/test/functional -g @skip-ci -i --exit
+      displayName: Run functional tests
