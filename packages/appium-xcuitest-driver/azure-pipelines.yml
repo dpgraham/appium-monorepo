@@ -7,4 +7,4 @@ jobs:
       inputs:
         versionSpec: 11.x
     - script: npm install
-    - script: npm run mocha -- -t 480000 build/test/functional -g @skip-ci -i --exit
+    - script: npx mocha --timeout 480000 build/test/functional -g @skip-ci -i --exit
