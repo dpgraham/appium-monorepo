@@ -12,6 +12,6 @@ jobs:
     - script: npm run build
       workingDirectory: packages/appium-xcuitest-driver
       displayName: Build
-    - script: npx mocha --timeout 480000 build/test/functional -g @skip-ci -i --exit
+    - script: npx mocha --timeout 480000 build/test/functional/basic -g @skip-ci -i --exit
       workingDirectory: packages/appium-xcuitest-driver
       displayName: Run functional tests
