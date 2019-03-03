@@ -1,7 +1,8 @@
 jobs:
   - job: E2E_Basic_12_2
     variables:
-      PLATFORM_VERSION: 11.4
+      PLATFORM_VERSION: 12.1
+      DEVICE_NAME: iPhone XS
     pool:
       vmImage: 'macOS 10.13'
     steps:
