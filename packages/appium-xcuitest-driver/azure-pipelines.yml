@@ -1,5 +1,7 @@
 jobs:
   - job: E2E_Basic_12_2
+    variables:
+      PLATFORM_VERSION: 12.2
     pool:
       vmImage: 'macOS 10.13'
     steps:
