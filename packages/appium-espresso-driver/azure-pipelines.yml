@@ -7,7 +7,7 @@ jobs:
       - task: Gradle@2
         inputs:
           workingDirectory: packages/appium-espresso-driver/espresso-server
-          gradleWrapperFile: packages/appium-espresso-driver/espresso-server/espresso-server/gradlew
+          gradleWrapperFile: packages/appium-espresso-driver/espresso-server/gradlew
           gradleOptions: '-Xmx3072m'
           publishJUnitResults: true
           testResultsFiles: '**/TEST-*.xml'
