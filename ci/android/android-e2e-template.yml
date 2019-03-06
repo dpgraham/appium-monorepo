@@ -13,6 +13,8 @@ jobs:
     variables:
       TERM: dumb
     steps:
+    - script: bash azure-pipelines/start-emulator.sh
+      displayName: Create and run Emulator
     - task: NodeTool@0
       inputs:
         versionSpec: 11.x
@@ -22,8 +24,6 @@ jobs:
     - script: npm run build
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Build
-    - script: bash azure-pipelines/start-emulator.sh
-      displayName: Create and run Emulator
     - script: ${{ parameters.script }}
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Run tests
