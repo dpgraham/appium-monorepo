@@ -1,7 +1,7 @@
 {
   "name": "appium-xcuitest-driver",
   "description": "Appium driver for iOS using XCUITest for backend",
-  "keywords": [
+  "keywords": [ 
     "appium",
     "ios",
     "webdriveragent",
