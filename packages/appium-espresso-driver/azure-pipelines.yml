@@ -14,7 +14,7 @@ jobs:
           tasks: test
   - template: ../../ci/android/android-e2e-template.yml
     parameters:
-      name: EspressoDriverE2E
+      name: E2E_Tests_SDK_28
       script: npx mocha --timeout 6000000 --recursive --reporter dot build/test/functional/
       workingDirectory: packages/appium-espresso-driver
 
