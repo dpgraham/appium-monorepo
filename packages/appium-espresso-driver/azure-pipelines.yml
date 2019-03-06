@@ -6,6 +6,7 @@ jobs:
     steps: 
       - task: Gradle@2
         inputs:
+          gradleWrapperFile: packages/appium-espresso-driver/espresso-server/gradlew
           workingDirectory: packages/appium-espresso-driver/espresso-server
           tasks: test
           publishJUnitResults: true
