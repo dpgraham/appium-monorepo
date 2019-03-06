@@ -31,8 +31,7 @@ class SetOrientation : RequestHandler<OrientationParams, Void?> {
 
     @Throws(AppiumException::class)
     override fun handle(params: OrientationParams): Void? {
-        val orientation = params.orientation
-        orientation ?: throw AppiumException("Screen orientation value must not be null")
+        val orientation = params.orientation ?: throw AppiumException("Screen orientation value must not be null")
 
         // Validate the orientaiton
         if (!listOf("LANDSCAPE", "PORTRAIT").contains(orientation.toUpperCase())) {
