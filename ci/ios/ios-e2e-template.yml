@@ -5,7 +5,7 @@ parameters:
     name: ios-e2e-test
     dependsOn: ''
     platformVersion: 10.0
-    deviceName: iPhone 5s
+    deviceName: 'iPhone 5s'
 
 jobs:
   - job: ${{ parameters.name }}
