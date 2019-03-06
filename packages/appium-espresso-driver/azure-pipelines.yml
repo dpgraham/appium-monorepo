@@ -2,11 +2,19 @@ variables:
   ANDROID_SDK: 28
 jobs:
   # Run E2E Tests
+  - job: Gradle_Tests
+    steps: 
+      - task: Gradle@2
+        inputs:
+          workingDirectory: packages/appium-espresso-driver/espresso-server
+          tasks: test
+          publishJUnitResults: true
   - template: ../../ci/android/android-e2e-template.yml
     parameters:
       name: EspressoDriverE2E
       script: npx mocha --timeout 6000000 --recursive --reporter dot build/test/functional/
       workingDirectory: packages/appium-espresso-driver
+
   #- job: RealDeviceTests
     #steps:
       #- script: npm install
