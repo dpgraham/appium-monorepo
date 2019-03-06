@@ -1,27 +1,22 @@
 jobs:
-  - job: E2E_Basic_12_2
-    variables:
-      PLATFORM_VERSION: 10.0
-      DEVICE_NAME: iPhone 5s
-    pool:
-      vmImage: 'macOS 10.13'
-    steps:
-    - checkout: self
-      submodules: true
-    - task: NodeTool@0
-      inputs:
-        versionSpec: 11.x
-    - script: |
-        sed -i '' 's/git@github.com:/https:\/\/github.com\//' /Users/travis/build/appium/appium-xcuitest-driver/.gitmodules;
-        git submodule update --init --recursive;
+  - template: ci/ios/ios-e2e-template.yml
+    parameters:
+      script: npx mocha --timeout 480000 --recursive build/test/functional/basic -g @skip-ci -i --exit
       workingDirectory: packages/appium-xcuitest-driver
-      displayName: Checkout WDA submodule
-    - script: npm install
+
+  - template: ci/ios/ios-e2e-template.yml
+    parameters:
+      script: npx mocha --timeout 480000 --recursive build/test/functional/driver -g @skip-ci -i --exit
       workingDirectory: packages/appium-xcuitest-driver
-      displayName: Install node dependencies
-    - script: npm run build
+      
+  - template: ci/ios/ios-e2e-template.yml
+    parameters:
+      script: npx mocha --timeout 480000 --recursive build/test/functional/web -g @skip-ci -i --exit
       workingDirectory: packages/appium-xcuitest-driver
-      displayName: Build
-    - script: npx mocha --timeout 480000 build/test/functional/basic -g @skip-ci -i --exit
+
+  - template: ci/ios/ios-e2e-template.yml
+    parameters:
+      script: npx mocha --timeout 480000 --recursive build/test/functional/long -g @skip-ci -i --exit
       workingDirectory: packages/appium-xcuitest-driver
-      displayName: Run functional tests
+
+  
