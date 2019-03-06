@@ -6,7 +6,7 @@ jobs:
     steps:
       - task: Gradle@2
         inputs:
-          workingDirectory: packages/appium-espresso-driver/appium-espresso-server
+          workingDirectory: appium-espresso-server
           # gradleWrapperFile: gradlew
           gradleOptions: '-Xmx3072m'
           publishJUnitResults: true
