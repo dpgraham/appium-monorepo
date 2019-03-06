@@ -6,10 +6,11 @@ jobs:
     steps: 
       - task: Gradle@2
         inputs:
-          gradleWrapperFile: packages/appium-espresso-driver/espresso-server/gradlew
-          workingDirectory: packages/appium-espresso-driver/espresso-server
-          tasks: test
-          publishJUnitResults: true
+          workingDirectory: 'packages/appium-espresso-driver'
+          gradleWrapperFile: 'espresso-server/gradlew'
+          gradleOptions: '-Xmx3072m'
+          publishJUnitResults: false
+          testResultsFiles: '**/TEST-*.xml'
   - template: ../../ci/android/android-e2e-template.yml
     parameters:
       name: EspressoDriverE2E
