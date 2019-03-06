@@ -13,7 +13,7 @@ jobs:
     variables:
       TERM: dumb
     steps:
-    - script: bash azure-pipelines/start-emulator.sh
+    - script: bash ci/start-emulator.sh
       displayName: Create and run Emulator
     - task: NodeTool@0
       inputs:
