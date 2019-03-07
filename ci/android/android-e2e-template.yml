@@ -4,6 +4,8 @@ parameters:
     workingDirectory: ''
     name: ''
     dependsOn: ''
+    chromedriverVersion: '2.44'
+    nodeVersion: '11.x'
 
 jobs:
   - job: ${{ parameters.name }}
@@ -15,17 +17,17 @@ jobs:
     steps:
     - task: NodeTool@0
       inputs:
-        versionSpec: 11.x
+        versionSpec: ${{ parameters.nodeVersion }}
     - script: npm install
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Install Node dependencies
+    - script: npm install appium-chromedriver --chromedriver_version="${{ parameters.chromedriverVersion }}"
+      displayName: Install Chromedriver
+    - script: bash ci/start-emulator.sh
+      displayName: Create and run Emulator
     - script: npm run build
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Build
-    - task: Bash@3
-      inputs:
-        filePath: ci/start-emulator.sh
-      displayName: Start the emulator
     - script: ${{ parameters.script }}
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Run tests

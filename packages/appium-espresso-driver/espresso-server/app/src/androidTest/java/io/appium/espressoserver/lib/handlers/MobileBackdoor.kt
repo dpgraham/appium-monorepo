@@ -37,8 +37,9 @@ class MobileBackdoor : RequestHandler<MobileBackdoorParams, Any?> {
     @Throws(InvalidArgumentException::class)
     private fun getBackdoorOperations(params: MobileBackdoorParams): List<InvocationOperation> {
         return params.methods.map {
-            val methodName = it.name ?: throw InvalidArgumentException("'name' is a required parameter for backdoor method to be invoked.")
-            InvocationOperation(methodName, it.arguments, it.argumentTypes)
+            val methodName = it.name ?: throw InvalidArgumentException("" +
+                    "'name' is a required parameter for backdoor method to be invoked.")
+        InvocationOperation(methodName, it.arguments, it.argumentTypes)
         }
     }
 }
