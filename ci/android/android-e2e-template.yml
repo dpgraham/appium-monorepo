@@ -25,9 +25,6 @@ jobs:
       displayName: Install Chromedriver
     - script: bash ci/start-emulator.sh
       displayName: Create and run Emulator
-    - task: NodeTool@0
-      inputs:
-        versionSpec: 11.x
     - script: npm run build
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Build
