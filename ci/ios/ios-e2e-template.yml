@@ -14,6 +14,7 @@ jobs:
       PLATFORM_VERSION: ${{ parameters.platformVersion }}
       DEVICE_NAME: ${{ parameters.deviceName }}
       MOCHA_FILE: 'junit-test-results.xml'
+      CI: true
     pool:
       vmImage: 'macOS 10.13'
     steps:
