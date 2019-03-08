@@ -1,2 +1,2 @@
 node_modules/
-junit-testresults.xml
+**/*.junit-test-results.xml
