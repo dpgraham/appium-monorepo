@@ -18,12 +18,9 @@ jobs:
     - task: NodeTool@0
       inputs:
         versionSpec: ${{ parameters.nodeVersion }}
-    - script: npm install
+    - script: npm install --chromedriver_version="${{ chromedriverVersion }}"
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Install Node dependencies
-    - script: npm install appium-chromedriver --chromedriver_version="${{ parameters.chromedriverVersion }}"
-      workingDirectory: ${{ parameters.workingDirectory }}
-      displayName: Install Chromedriver
     - script: bash ci/start-emulator.sh
       displayName: Create and run Emulator
     - script: npm run build
