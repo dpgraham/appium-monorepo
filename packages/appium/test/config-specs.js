@@ -19,7 +19,7 @@ chai.use(chaiAsPromised);
 
 describe('Config', function () {
   describe('getGitRev', function () {
-    it('should get a reasonable git revision', async function () {
+    it('should get a reasonable git revision @skip-ci', async function () {
       let rev = await getGitRev();
       rev.should.be.a('string');
       rev.length.should.be.equal(40);
