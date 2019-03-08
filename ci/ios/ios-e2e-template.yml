@@ -4,8 +4,8 @@ parameters:
     workingDirectory: ''
     name: ios-e2e-test
     dependsOn: ''
-    platformVersion: 10.0
-    deviceName: 'iPhone 5s'
+    platformVersion: 12
+    deviceName: 'iPhone X'
 
 jobs:
   - job: ${{ parameters.name }}
