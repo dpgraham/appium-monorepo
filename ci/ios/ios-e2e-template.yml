@@ -4,7 +4,7 @@ parameters:
     workingDirectory: ''
     name: ios-e2e-test
     dependsOn: ''
-    platformVersion: 12
+    platformVersion: 12.1
     deviceName: 'iPhone X'
 
 jobs:
