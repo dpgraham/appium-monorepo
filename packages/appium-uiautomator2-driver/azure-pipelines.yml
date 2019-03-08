@@ -5,26 +5,26 @@ jobs:
   - template: ../../ci/android/android-e2e-template.yml
     parameters:
       name: Uiautomator2DriverE2ETest1
-      script: npx mocha --timeout 6000000 --reporter dot build/test/functional/ -g @skip-ci -i --exit
+      script: npx mocha --timeout 6000000 --reporter mocha-junit-reporter build/test/functional/ -g @skip-ci -i --exit
       workingDirectory: packages/appium-uiautomator2-driver
   - template: ../../ci/android/android-e2e-template.yml
     parameters:
       name: Uiautomator2DriverE2ETest2
-      script: npx mocha --timeout 6000000 --reporter dot build/test/functional/commands -g @skip-ci -i --exit
+      script: npx mocha --timeout 6000000 --reporter mocha-junit-reporter build/test/functional/commands -g @skip-ci -i --exit
       workingDirectory: packages/appium-uiautomator2-driver
   - template: ../../ci/android/android-e2e-template.yml
     parameters:
       name: Uiautomator2DriverE2ETest3
-      script: npx mocha --timeout 6000000 --reporter dot build/test/functional/commands/keyboard -g @skip-ci -i --exit
+      script: npx mocha --timeout 6000000 --reporter mocha-junit-reporter build/test/functional/commands/keyboard -g @skip-ci -i --exit
       workingDirectory: packages/appium-uiautomator2-driver
   - template: ../../ci/android/android-e2e-template.yml
     parameters:
       name: Uiautomator2DriverE2ETest4
-      script: npx mocha --timeout 6000000 --reporter dot build/test/functional/commands/find -g @skip-ci -i --exit
+      script: npx mocha --timeout 6000000 --reporter mocha-junit-reporter build/test/functional/commands/find -g @skip-ci -i --exit
       workingDirectory: packages/appium-uiautomator2-driver
   - template: ../../ci/android/android-e2e-template.yml
     parameters:
       name: Uiautomator2DriverE2ETest5
-      script: npx mocha --timeout 6000000 --reporter dot build/test/functional/commands/general -g @skip-ci -i --exit
+      script: npx mocha --timeout 6000000 --reporter mocha-junit-reporter build/test/functional/commands/general -g @skip-ci -i --exit
       workingDirectory: packages/appium-uiautomator2-driver
     

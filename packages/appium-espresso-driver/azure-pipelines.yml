@@ -15,7 +15,7 @@ jobs:
   - template: ../../ci/android/android-e2e-template.yml
     parameters:
       name: E2E_Tests_SDK_28
-      script: npx mocha --timeout 6000000 --recursive --reporter dot build/test/functional/ -g @skip-ci -i --exit
+      script: npx mocha --timeout 6000000 --recursive --reporter mocha-junit-reporter build/test/functional/ -g @skip-ci -i --exit
       workingDirectory: packages/appium-espresso-driver
 
   #- job: RealDeviceTests
