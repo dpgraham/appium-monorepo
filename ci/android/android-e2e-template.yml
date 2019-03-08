@@ -34,7 +34,6 @@ jobs:
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Run tests
     - task: PublishTestResults@2
-      workingDirectory: packages/appium-xcuitest-driver
       inputs:
-        testResultsFiles: ${{ parameters.testResultsFiles }}
+        testResultsFiles: ${{ parameters.workingDirectory }}/${{ parameters.testResultsFiles }}
  
