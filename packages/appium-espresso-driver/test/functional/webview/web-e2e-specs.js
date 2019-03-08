@@ -18,7 +18,7 @@ describe('web', function () {
         appPackage: 'io.appium.android.apis',
         appActivity: 'io.appium.android.apis.view.WebView1',
         autoWebview: true,
-        chromedriverUseSystemExecutable: true,
+        adbExecTimeout: 40000,
       });
     });
     after(async function () {
