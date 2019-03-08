@@ -21,6 +21,8 @@ jobs:
     - script: npm install --chromedriver_version="${{ parameters.chromedriverVersion }}"
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Install Node dependencies
+    - script: npm install -g mjpeg-consumer
+      displayName: Install MJPEG Consumer
     - script: bash ci/start-emulator.sh
       displayName: Create and run Emulator
     - script: npm run build
