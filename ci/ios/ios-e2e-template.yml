@@ -6,12 +6,14 @@ parameters:
     dependsOn: ''
     platformVersion: 12.1
     deviceName: 'iPhone X'
+    testResultsFiles: 'junit-test-results.xml'
 
 jobs:
   - job: ${{ parameters.name }}
     variables:
       PLATFORM_VERSION: ${{ parameters.platformVersion }}
       DEVICE_NAME: ${{ parameters.deviceName }}
+      MOCHA_FILE: 'junit-test-results.xml'
     pool:
       vmImage: 'macOS 10.13'
     steps:

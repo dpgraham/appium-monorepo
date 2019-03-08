@@ -15,6 +15,7 @@ jobs:
       vmImage: 'macOS-10.13'
     variables:
       TERM: dumb
+      MOCHA_FILE: 'junit-test-results.xml'
     steps:
     - task: NodeTool@0
       inputs:
