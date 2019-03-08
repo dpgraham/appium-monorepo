@@ -2,7 +2,9 @@ jobs:
   - template: ../../ci/ios/ios-e2e-template.yml
     parameters:
       name: e2e_basic_10_0
-      script: npx mocha --timeout 480000 --recursive build/test/functional/basic -g @skip-ci -i --exit
+      script: |
+        npm install --no-save mjpeg-consumer
+        npx mocha --timeout 480000 --recursive build/test/functional/basic -g @skip-ci -i --exit
       workingDirectory: packages/appium-xcuitest-driver
 
   - template: ../../ci/ios/ios-e2e-template.yml
