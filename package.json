@@ -9,6 +9,7 @@
   "author": "Dan Graham",
   "license": "ISC",
   "devDependencies": {
-    "lerna": "^3.13.0"
+    "lerna": "^3.13.0",
+    "mocha-junit-reporter": "^1.18.0"
   }
 }
