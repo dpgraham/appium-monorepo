@@ -37,6 +37,5 @@ jobs:
       workingDirectory: packages/appium-xcuitest-driver
       displayName: Run functional tests
     - task: PublishTestResults@2
-      workingDirectory: packages/appium-xcuitest-driver
       inputs:
         testResultsFiles: ${{ parameters.workingDirectory }}/${{ parameters.testResultsFiles }}
