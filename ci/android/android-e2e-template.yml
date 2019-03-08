@@ -18,7 +18,7 @@ jobs:
     - task: NodeTool@0
       inputs:
         versionSpec: ${{ parameters.nodeVersion }}
-    - script: npm install --chromedriver_version="${{ chromedriverVersion }}"
+    - script: npm install --chromedriver_version="${{ parameters.chromedriverVersion }}"
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Install Node dependencies
     - script: bash ci/start-emulator.sh
