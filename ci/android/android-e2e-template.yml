@@ -33,7 +33,5 @@ jobs:
     - script: ${{ parameters.script }}
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Run tests
-    - task: PublishTestResults@2
-      inputs:
-        testResultsFiles: ${{ parameters.testResultsFiles }}
+      testResultsFiles: ${{ parameters.testResultsFiles }}
  

@@ -36,3 +36,4 @@ jobs:
     - script: ${{ parameters.script }}
       workingDirectory: packages/appium-xcuitest-driver
       displayName: Run functional tests
+      testResultsFiles: ${{ parameters.testResultsFiles }}
