@@ -34,6 +34,7 @@ jobs:
       workingDirectory: ${{ parameters.workingDirectory }}
       displayName: Run tests
     - task: PublishTestResults@2
+      condition: always()
       inputs:
         testResultsFiles: ${{ parameters.workingDirectory }}/${{ parameters.testResultsFiles }}
  
